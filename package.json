@@ -1,0 +1,52 @@
+{
+  "name": "baze-smart-voucher",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/start-with-ip.js",
+    "dev:local": "next dev",
+    "dev:simple": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0",
+    "start:local": "next start",
+    "lint": "next lint",
+    "setup:env": "node scripts/setup-env.js",
+    "setup:db": "node scripts/setup-database.js",
+    "db": "npm run setup:db",
+    "setup": "npm run setup:env && npm run setup:db",
+    "seed:restaurants": "node seed/seed-restaurants.js",
+    "seed:brim": "node seed/seed-brim-owner-data.js",
+    "seed": "npm run seed:restaurants && npm run seed:brim",
+    "fix:admin": "node scripts/fix-admin-password.js",
+    "migrate:payment-method": "node scripts/add-payment-method-migration.js",
+    "migrate:topup-requests": "node scripts/add-topup-requests-migration.js",
+    "get:ip": "node scripts/get-network-ip.js"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "mysql2": "^3.6.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "qrcode": "^1.5.3",
+    "qrcode.react": "^3.1.0",
+    "zod": "^3.22.4",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.3.0",
+    "tailwindcss": "^3.3.6",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "eslint": "^8.55.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}
+
