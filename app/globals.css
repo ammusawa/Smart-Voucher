@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 31, 41, 55; /* gray-800 */
+  --background-start-rgb: 249, 250, 251; /* gray-50 */
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(31, 41, 55); /* gray-800 - dark text for light backgrounds */
+  background-color: rgb(249, 250, 251); /* gray-50 - light background */
+  min-height: 100vh;
+}
+
+/* Ensure text is visible by default - override any white text on white background issues */
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  /* Remove tap highlight and respect device safe areas */
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .safe-px {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  .safe-py {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-pt {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
